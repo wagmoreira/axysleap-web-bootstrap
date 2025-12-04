@@ -1,52 +1,41 @@
-/* Reset básico para limpar margens e deixar tudo padronizado */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Paleta de cores AxisLeap */
 :root {
-    --axis-navy: #0F233D;     /* fundo principal */
-    --axis-navy-soft: #1F3D5B;/* cards / caixas */
-    --axis-green: #2DA48F;    /* botões / destaques */
+    --axis-navy: #0F233D;
+    --axis-navy-soft: #1F3D5B;
+    --axis-green: #2DA48F;
     --axis-green-dark: #238C78;
     --axis-white-soft: #F7F9FC;
     --axis-grey-soft: #AAB3BF;
 }
 
-/* Fonte padrão e fundo geral */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--axis-navy);
     color: var(--axis-white-soft);
-    line-height: 1.5;   /* ← adiciona espaço entre as linhas de texto */
+    line-height: 1.5;
 }
 
-/* ---------------------- */
-/* HEADER - BARRA SUPERIOR */
-/* ---------------------- */
-
+/* HEADER */
 .topo {
     background-color: var(--axis-navy);
     color: var(--axis-white-soft);
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    /* ajuste de espaçamento horizontal do header */
-    padding: 20px 96px;   /* ⇦ experimente 72px ou 80px ou 96px */
-
+    padding: 20px 96px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
-
 
 .topo .logo {
     font-size: 22px;
     font-weight: 600;
 }
 
-/* MENU - links do header */
 .menu a {
     color: var(--axis-white-soft);
     margin-left: 40px;
@@ -66,26 +55,19 @@ body {
     text-decoration: underline;
 }
 
-/* ---------------------- */
-/* LAYOUT GERAL           */
-/* ---------------------- */
-
+/* LAYOUT GERAL */
 main {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 24px 60px;
 }
 
-/* Títulos de seções */
 h2 {
     font-size: 24px;
     margin-bottom: 16px;
 }
 
-/* ---------------------- */
-/* HERO - SEÇÃO PRINCIPAL */
-/* ---------------------- */
-
+/* HERO */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -96,30 +78,26 @@ h2 {
     background: radial-gradient(circle at top left, #1F3D5B 0%, #0F233D 60%, #0F233D 100%);
 }
 
-/* Bloco de texto da Hero */
-/* Container do texto da hero */
 .hero-texto {
     width: 60%;
     display: flex;
     flex-direction: column;
-    gap: 12px;           /* espaço entre título, frase e botão */
-    padding-left: 32px;  /* ajuste principal para afastar da borda esquerda */
+    gap: 12px;
+    padding-left: 32px;
 }
 
 .hero-texto h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    line-height: 1.3;      /* título mais “arejado” */
+    line-height: 1.3;
 }
 
 .hero-texto p {
     font-size: 18px;
     margin-bottom: 28px;
     max-width: 420px;
-    color: var(--axis-white-soft);
 }
 
-/* Botão "Entrar" */
 .hero-texto button {
     background-color: var(--axis-green);
     color: white;
@@ -130,35 +108,28 @@ h2 {
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(45, 164, 143, 0.4);
-
-    /* estes três são os responsáveis por “regular” o botão */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    align-self: flex-start;   /* não estica até o fim do card */
+    align-self: flex-start;
 }
-
 
 .hero-texto button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 10px 24px rgba(45,164,143,0.5);
+    box-shadow: 0 10px 24px rgba(45, 164, 143, 0.5);
 }
 
-/* Bloco da imagem/preview */
 .hero-imagem {
-    width: 380px; 
-    height: 320px;   /* <-- aumente para caber a logo */
+    width: 380px;
+    height: 320px;
     border-radius: 24px;
     background: linear-gradient(145deg, #1F3D5B, #0F233D);
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.6),
-        0 0 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.3);
 }
-
 
 .hero-imagem img {
     width: 300px;
@@ -166,19 +137,11 @@ h2 {
     opacity: 0.95;
 }
 
-/* Espaçamento entre blocos principais (Trilha, Simulador, Perfil) */
+/* TRILHA */
 .trilha,
 .simulador,
 .perfil {
     margin-top: 40px;
-}
-/* ---------------------- */
-/* TRILHA DE APRENDIZADO  */
-/* ---------------------- */
-
-.trilha h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
 }
 
 .trilha-descricao {
@@ -187,14 +150,12 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Grid de cards */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 
-/* Card individual */
 .card {
     background-color: var(--axis-navy-soft);
     border-radius: 16px;
@@ -208,15 +169,12 @@ h2 {
 
 .card h3 {
     font-size: 18px;
-    margin-bottom: 4px;
 }
 
 .card p {
     font-size: 14px;
-    color: var(--axis-white-soft);
 }
 
-/* Barra de progresso */
 .card-progress {
     width: 100%;
     height: 6px;
@@ -231,27 +189,18 @@ h2 {
     background: linear-gradient(90deg, #2DA48F, #2DD4BF);
 }
 
-/* Status abaixo da barra */
 .card-status {
     font-size: 12px;
     color: var(--axis-grey-soft);
 }
 
-/* Hover sutil */
 .card:hover {
     transform: translateY(-2px);
     box-shadow: 0 18px 32px rgba(0, 0, 0, 0.6);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-/* ---------------------- */
-/* SIMULADOR DE INVEST    */
-/* ---------------------- */
-
-.simulador h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
+    transition: 0.15s ease;
 }
 
+/* SIMULADOR */
 .simulador-card {
     background-color: var(--axis-navy-soft);
     border-radius: 16px;
@@ -261,31 +210,10 @@ h2 {
     max-width: 420px;
 }
 
-/* Linhas internas */
 .simulador-linha {
     margin-bottom: 20px;
 }
 
-.simulador-linha label,
-.simulador-linha-topo span:first-child {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-/* “Moderado” à direita do título */
-.simulador-linha-topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.simulador-risco-label {
-    font-size: 12px;
-    color: var(--axis-grey-soft);
-}
-
-/* Input de texto */
 .simulador input[type="text"] {
     width: 100%;
     padding: 8px 10px;
@@ -296,7 +224,6 @@ h2 {
     font-size: 14px;
 }
 
-/* Barra do Slider */
 .simulador input[type="range"] {
     width: 100%;
     margin-top: 4px;
@@ -306,21 +233,18 @@ h2 {
     appearance: none;
 }
 
-/* Trilho – WebKit (Chrome, Edge, etc.) */
 .simulador input[type="range"]::-webkit-slider-runnable-track {
     height: 6px;
     border-radius: 999px;
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Trilho – Firefox */
 .simulador input[type="range"]::-moz-range-track {
     height: 6px;
     border-radius: 999px;
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Thumb (bolinha) – WebKit */
 .simulador input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -334,7 +258,6 @@ h2 {
     cursor: grab;
 }
 
-/* Thumb (bolinha) – Firefox */
 .simulador input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
@@ -345,24 +268,21 @@ h2 {
     cursor: grab;
 }
 
-/* Cursor quando está arrastando */
 .simulador input[type="range"]:active::-webkit-slider-thumb {
     cursor: grabbing;
 }
+
 .simulador input[type="range"]:active::-moz-range-thumb {
     cursor: grabbing;
 }
 
-/* Marcas Baixo / Médio / Alto */
 .simulador-risco-marcas {
     display: flex;
     justify-content: space-between;
     font-size: 11px;
-    margin-top: 4px;
     color: var(--axis-grey-soft);
 }
 
-/* Resultado */
 .simulador-resultado {
     display: flex;
     justify-content: space-between;
@@ -377,7 +297,6 @@ h2 {
     font-size: 18px;
 }
 
-/* Botão do simulador */
 .simulador-botao {
     background-color: var(--axis-green);
     color: white;
@@ -396,15 +315,8 @@ h2 {
 .simulador-botao:hover {
     background-color: var(--axis-green-dark);
 }
-/* ========================= */
-/* SEÇÃO "SEU PERFIL"        */
-/* ========================= */
 
-.perfil {
-    margin-top: 60px;
-}
-
-/* Card principal do perfil */
+/* PERFIL */
 .perfil-card {
     background-color: var(--axis-navy-soft);
     border-radius: 16px;
@@ -416,7 +328,6 @@ h2 {
     gap: 20px;
 }
 
-/* Cabeçalho: avatar + textos + tag */
 .perfil-header {
     display: flex;
     align-items: center;
@@ -424,11 +335,10 @@ h2 {
     gap: 16px;
 }
 
-/* Avatar com tamanho fixo que não quebra */
 .perfil-avatar {
     width: 72px;
     height: 72px;
-    min-width: 72px;   /* impede de encolher */
+    min-width: 72px;
     background-color: var(--axis-green);
     color: var(--axis-navy);
     display: flex;
@@ -440,24 +350,21 @@ h2 {
     text-transform: uppercase;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-/* Linha geral: avatar + textos */
+
 .perfil-identidade {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* Textos ao lado do avatar */
 .perfil-textos {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-/* Textos do cabeçalho */
 .perfil-textos h3 {
     font-size: 18px;
-    margin-bottom: 4px;
 }
 
 .perfil-textos p {
@@ -465,7 +372,6 @@ h2 {
     color: var(--axis-grey-soft);
 }
 
-/* Tag de nível (pill) */
 .perfil-tag {
     font-size: 12px;
     padding: 6px 12px;
@@ -476,7 +382,6 @@ h2 {
     white-space: nowrap;
 }
 
-/* Bloco de métricas rápidas */
 .perfil-metricas {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -502,7 +407,6 @@ h2 {
     color: var(--axis-white-soft);
 }
 
-/* Progresso na trilha */
 .perfil-progresso-bloco {
     margin-top: 4px;
     display: flex;
@@ -527,7 +431,6 @@ h2 {
     color: var(--axis-green);
 }
 
-/* Barra de progresso geral do perfil */
 .perfil-progress {
     width: 100%;
     height: 8px;
@@ -537,7 +440,7 @@ h2 {
 }
 
 .perfil-progress-bar {
-    width: 35%; /* mesma info do texto "35%" */
+    width: 35%;
     height: 100%;
     border-radius: 999px;
     background: linear-gradient(90deg, #2DA48F, #2DD4BF);
@@ -548,8 +451,31 @@ h2 {
     color: var(--axis-grey-soft);
 }
 
-/* Ajustes básicos para telas menores */
+/* RESPONSIVO */
 @media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-imagem {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    main {
+        padding: 0 16px 40px;
+    }
+
+    .topo {
+        padding: 12px 16px;
+    }
+
+    .menu a {
+        margin-left: 16px;
+        font-size: 14px;
+    }
+
     .perfil-metricas {
         grid-template-columns: 1fr;
     }
@@ -564,213 +490,30 @@ h2 {
     }
 }
 
-/* ---------------------- */
-/* FOOTER                 */
-/* ---------------------- */
-
+/* FOOTER */
 footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 16px 0 24px;
-    text-align: center;         /* centralização do texto */
+    text-align: center;
     font-size: 12px;
     color: var(--axis-grey-soft);
 }
-
-/* ========================= */
-/* RESPONSIVIDADE - TABLETS  */
-/* ========================= */
-@media (max-width: 900px) {
-
-    /* Header mais compacto e fluido */
-    .topo {
-        padding: 14px 24px;
-        flex-wrap: wrap;
-        gap: 8px 16px;
-    }
-
-    .topo .logo {
-        font-size: 20px;
-    }
-
-    .menu {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .menu a {
-        margin-left: 20px;
-        font-size: 14px;
-    }
-
-    /* Layout geral um pouco mais “colado” */
-    main {
-        max-width: 100%;
-        margin: 32px auto 48px;
-        padding: 0 16px 40px;
-    }
-
-    /* HERO empilhada, mas ainda “deitada” */
-    .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 32px 20px;
-        border-radius: 20px;
-    }
-
-    .hero-texto {
-        width: 100%;
-        padding-left: 0;
-    }
-
-    .hero-imagem {
-        width: 100%;
-        max-width: 360px;
-        align-self: center;
-        margin-top: 20px;
-    }
-
-    /* Cards em 2 colunas quando der */
-    .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    /* Simulador ocupando mais largura */
-    .simulador-card {
-        max-width: 540px;
-    }
-
-    /* Perfil mais compacto */
-    .perfil-card {
-        padding: 20px 16px;
-    }
-
-    .perfil-metricas {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .perfil-header {
-        gap: 12px;
-    }
+/* Correção das cores da Trilha */
+.trilha h2,
+.trilha p,
+.trilha .card h3,
+.trilha .card p,
+.trilha .card span {
+    color: #E2E8F0 !important;
 }
 
-/* ========================= */
-/* RESPONSIVIDADE - CELULAR  */
-/* ========================= */
-@media (max-width: 600px) {
+.trilha .card {
+    background: #1B3956 !important;
+    color: #E2E8F0 !important;
+}
 
-    /* Header bem compacto em mobile */
-    .topo {
-        padding: 10px 16px;
-        flex-wrap: wrap;
-        gap: 8px 0;
-    }
-
-    .topo .logo {
-        font-size: 18px;
-    }
-
-    .menu {
-        width: 100%;
-        justify-content: flex-end;
-    }
-
-    .menu a {
-        margin-left: 12px;
-        font-size: 13px;
-    }
-
-    /* Títulos menores */
-    h2 {
-        font-size: 20px;
-    }
-
-    /* HERO em “modo app” */
-    .hero {
-        padding: 24px 16px;
-        border-radius: 18px;
-        gap: 20px;
-    }
-
-    .hero-texto {
-        width: 100%;
-        padding-left: 0;
-    }
-
-    .hero-texto h1 {
-        font-size: 28px;
-        margin-bottom: 12px;
-    }
-
-    .hero-texto p {
-        font-size: 15px;
-        margin-bottom: 20px;
-        max-width: 100%;
-    }
-
-    .hero-texto button {
-        padding: 10px 24px;
-        font-size: 14px;
-    }
-
-    .hero-imagem {
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    /* Cards em 1 coluna – full width */
-    .cards {
-        grid-template-columns: 1fr;
-        gap: 14px;
-    }
-
-    .card {
-        padding: 16px 14px 14px;
-    }
-
-    /* Simulador ocupando toda a largura */
-    .simulador-card {
-        max-width: 100%;
-        padding: 20px 14px 16px;
-    }
-
-    /* Perfil “mobile friendly” */
-    .perfil-card {
-        padding: 18px 14px 16px;
-        gap: 16px;
-    }
-
-    .perfil-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .perfil-avatar {
-        width: 64px;
-        height: 64px;
-        font-size: 22px;
-    }
-
-    .perfil-metricas {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .perfil-progresso-label {
-        font-size: 12px;
-    }
-
-    .perfil-nota {
-        font-size: 11px;
-    }
-
-    /* Footer menorzinho */
-    footer {
-        font-size: 11px;
-        padding: 12px 0 18px;
-    }
+.trilha .card .card-progress,
+.trilha .card .card-progress-bar {
+    background: inherit;
 }
