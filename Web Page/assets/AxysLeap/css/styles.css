@@ -1,0 +1,776 @@
+/* Reset básico para limpar margens e deixar tudo padronizado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de cores AxisLeap */
+:root {
+    --axis-navy: #0F233D;     /* fundo principal */
+    --axis-navy-soft: #1F3D5B;/* cards / caixas */
+    --axis-green: #2DA48F;    /* botões / destaques */
+    --axis-green-dark: #238C78;
+    --axis-white-soft: #F7F9FC;
+    --axis-grey-soft: #AAB3BF;
+}
+
+/* Fonte padrão e fundo geral */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--axis-navy);
+    color: var(--axis-white-soft);
+    line-height: 1.5;   /* ← adiciona espaço entre as linhas de texto */
+}
+
+/* ---------------------- */
+/* HEADER - BARRA SUPERIOR */
+/* ---------------------- */
+
+.topo {
+    background-color: var(--axis-navy);
+    color: var(--axis-white-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* ajuste de espaçamento horizontal do header */
+    padding: 20px 96px;   /* ⇦ experimente 72px ou 80px ou 96px */
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+.topo .logo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* MENU - links do header */
+.menu a {
+    color: var(--axis-white-soft);
+    margin-left: 40px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: var(--axis-green);
+    text-decoration: underline;
+}
+
+.menu a.ativo {
+    color: var(--axis-green);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* ---------------------- */
+/* LAYOUT GERAL           */
+/* ---------------------- */
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px 60px;
+}
+
+/* Títulos de seções */
+h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* ---------------------- */
+/* HERO - SEÇÃO PRINCIPAL */
+/* ---------------------- */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    padding: 60px 0;
+    border-radius: 24px;
+    background: radial-gradient(circle at top left, #1F3D5B 0%, #0F233D 60%, #0F233D 100%);
+}
+
+/* Bloco de texto da Hero */
+/* Container do texto da hero */
+.hero-texto {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;           /* espaço entre título, frase e botão */
+    padding-left: 32px;  /* ajuste principal para afastar da borda esquerda */
+}
+
+.hero-texto h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1.3;      /* título mais “arejado” */
+}
+
+.hero-texto p {
+    font-size: 18px;
+    margin-bottom: 28px;
+    max-width: 420px;
+    color: var(--axis-white-soft);
+}
+
+/* Botão "Entrar" */
+.hero-texto button {
+    background-color: var(--axis-green);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(45, 164, 143, 0.4);
+
+    /* estes três são os responsáveis por “regular” o botão */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;   /* não estica até o fim do card */
+}
+
+
+.hero-texto button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(45,164,143,0.5);
+}
+
+/* Bloco da imagem/preview */
+.hero-imagem {
+    width: 380px; 
+    height: 320px;   /* <-- aumente para caber a logo */
+    border-radius: 24px;
+    background: linear-gradient(145deg, #1F3D5B, #0F233D);
+    border: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.6),
+        0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-imagem img {
+    width: 300px;
+    height: auto;
+    opacity: 0.95;
+}
+
+/* Espaçamento entre blocos principais (Trilha, Simulador, Perfil) */
+.trilha,
+.simulador,
+.perfil {
+    margin-top: 40px;
+}
+/* ---------------------- */
+/* TRILHA DE APRENDIZADO  */
+/* ---------------------- */
+
+.trilha h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.trilha-descricao {
+    font-size: 14px;
+    color: var(--axis-grey-soft);
+    margin-bottom: 20px;
+}
+
+/* Grid de cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* Card individual */
+.card {
+    background-color: var(--axis-navy-soft);
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--axis-white-soft);
+}
+
+/* Barra de progresso */
+.card-progress {
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.card-progress-bar {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2DA48F, #2DD4BF);
+}
+
+/* Status abaixo da barra */
+.card-status {
+    font-size: 12px;
+    color: var(--axis-grey-soft);
+}
+
+/* Hover sutil */
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.6);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+/* ---------------------- */
+/* SIMULADOR DE INVEST    */
+/* ---------------------- */
+
+.simulador h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.simulador-card {
+    background-color: var(--axis-navy-soft);
+    border-radius: 16px;
+    padding: 24px 24px 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    max-width: 420px;
+}
+
+/* Linhas internas */
+.simulador-linha {
+    margin-bottom: 20px;
+}
+
+.simulador-linha label,
+.simulador-linha-topo span:first-child {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* “Moderado” à direita do título */
+.simulador-linha-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.simulador-risco-label {
+    font-size: 12px;
+    color: var(--axis-grey-soft);
+}
+
+/* Input de texto */
+.simulador input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,0.2);
+    color: var(--axis-white-soft);
+    font-size: 14px;
+}
+
+/* Barra do Slider */
+.simulador input[type="range"] {
+    width: 100%;
+    margin-top: 4px;
+    background: transparent;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Trilho – WebKit (Chrome, Edge, etc.) */
+.simulador input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Trilho – Firefox */
+.simulador input[type="range"]::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Thumb (bolinha) – WebKit */
+.simulador input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--axis-green);
+    border: none;
+    margin-top: -7px;
+    box-shadow: 0 0 10px rgba(45, 164, 143, 0.6);
+    cursor: grab;
+}
+
+/* Thumb (bolinha) – Firefox */
+.simulador input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--axis-green);
+    border: none;
+    box-shadow: 0 0 10px rgba(45, 164, 143, 0.6);
+    cursor: grab;
+}
+
+/* Cursor quando está arrastando */
+.simulador input[type="range"]:active::-webkit-slider-thumb {
+    cursor: grabbing;
+}
+.simulador input[type="range"]:active::-moz-range-thumb {
+    cursor: grabbing;
+}
+
+/* Marcas Baixo / Médio / Alto */
+.simulador-risco-marcas {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-top: 4px;
+    color: var(--axis-grey-soft);
+}
+
+/* Resultado */
+.simulador-resultado {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.simulador-resultado strong {
+    color: var(--axis-green);
+    font-size: 18px;
+}
+
+/* Botão do simulador */
+.simulador-botao {
+    background-color: var(--axis-green);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(45, 164, 143, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.simulador-botao:hover {
+    background-color: var(--axis-green-dark);
+}
+/* ========================= */
+/* SEÇÃO "SEU PERFIL"        */
+/* ========================= */
+
+.perfil {
+    margin-top: 60px;
+}
+
+/* Card principal do perfil */
+.perfil-card {
+    background-color: var(--axis-navy-soft);
+    border-radius: 16px;
+    padding: 24px 24px 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cabeçalho: avatar + textos + tag */
+.perfil-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Avatar com tamanho fixo que não quebra */
+.perfil-avatar {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;   /* impede de encolher */
+    background-color: var(--axis-green);
+    color: var(--axis-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 26px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+/* Linha geral: avatar + textos */
+.perfil-identidade {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Textos ao lado do avatar */
+.perfil-textos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Textos do cabeçalho */
+.perfil-textos h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.perfil-textos p {
+    font-size: 13px;
+    color: var(--axis-grey-soft);
+}
+
+/* Tag de nível (pill) */
+.perfil-tag {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(45, 164, 143, 0.16);
+    color: var(--axis-green);
+    border: 1px solid rgba(45, 164, 143, 0.5);
+    white-space: nowrap;
+}
+
+/* Bloco de métricas rápidas */
+.perfil-metricas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.perfil-metrica {
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.perfil-metrica-label {
+    display: block;
+    font-size: 12px;
+    color: var(--axis-grey-soft);
+    margin-bottom: 6px;
+}
+
+.perfil-metrica-valor {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--axis-white-soft);
+}
+
+/* Progresso na trilha */
+.perfil-progresso-bloco {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.perfil-progresso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perfil-progresso-label {
+    font-size: 13px;
+    color: var(--axis-grey-soft);
+}
+
+.perfil-progresso-percentual {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--axis-green);
+}
+
+/* Barra de progresso geral do perfil */
+.perfil-progress {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.09);
+    overflow: hidden;
+}
+
+.perfil-progress-bar {
+    width: 35%; /* mesma info do texto "35%" */
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2DA48F, #2DD4BF);
+}
+
+.perfil-nota {
+    font-size: 12px;
+    color: var(--axis-grey-soft);
+}
+
+/* Ajustes básicos para telas menores */
+@media (max-width: 900px) {
+    .perfil-metricas {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .perfil-tag {
+        align-self: flex-start;
+    }
+}
+
+/* ---------------------- */
+/* FOOTER                 */
+/* ---------------------- */
+
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 0 24px;
+    text-align: center;         /* centralização do texto */
+    font-size: 12px;
+    color: var(--axis-grey-soft);
+}
+
+/* ========================= */
+/* RESPONSIVIDADE - TABLETS  */
+/* ========================= */
+@media (max-width: 900px) {
+
+    /* Header mais compacto e fluido */
+    .topo {
+        padding: 14px 24px;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+
+    .topo .logo {
+        font-size: 20px;
+    }
+
+    .menu {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu a {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    /* Layout geral um pouco mais “colado” */
+    main {
+        max-width: 100%;
+        margin: 32px auto 48px;
+        padding: 0 16px 40px;
+    }
+
+    /* HERO empilhada, mas ainda “deitada” */
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 20px;
+        border-radius: 20px;
+    }
+
+    .hero-texto {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .hero-imagem {
+        width: 100%;
+        max-width: 360px;
+        align-self: center;
+        margin-top: 20px;
+    }
+
+    /* Cards em 2 colunas quando der */
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    /* Simulador ocupando mais largura */
+    .simulador-card {
+        max-width: 540px;
+    }
+
+    /* Perfil mais compacto */
+    .perfil-card {
+        padding: 20px 16px;
+    }
+
+    .perfil-metricas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .perfil-header {
+        gap: 12px;
+    }
+}
+
+/* ========================= */
+/* RESPONSIVIDADE - CELULAR  */
+/* ========================= */
+@media (max-width: 600px) {
+
+    /* Header bem compacto em mobile */
+    .topo {
+        padding: 10px 16px;
+        flex-wrap: wrap;
+        gap: 8px 0;
+    }
+
+    .topo .logo {
+        font-size: 18px;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .menu a {
+        margin-left: 12px;
+        font-size: 13px;
+    }
+
+    /* Títulos menores */
+    h2 {
+        font-size: 20px;
+    }
+
+    /* HERO em “modo app” */
+    .hero {
+        padding: 24px 16px;
+        border-radius: 18px;
+        gap: 20px;
+    }
+
+    .hero-texto {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .hero-texto h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .hero-texto p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .hero-texto button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .hero-imagem {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    /* Cards em 1 coluna – full width */
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .card {
+        padding: 16px 14px 14px;
+    }
+
+    /* Simulador ocupando toda a largura */
+    .simulador-card {
+        max-width: 100%;
+        padding: 20px 14px 16px;
+    }
+
+    /* Perfil “mobile friendly” */
+    .perfil-card {
+        padding: 18px 14px 16px;
+        gap: 16px;
+    }
+
+    .perfil-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .perfil-avatar {
+        width: 64px;
+        height: 64px;
+        font-size: 22px;
+    }
+
+    .perfil-metricas {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .perfil-progresso-label {
+        font-size: 12px;
+    }
+
+    .perfil-nota {
+        font-size: 11px;
+    }
+
+    /* Footer menorzinho */
+    footer {
+        font-size: 11px;
+        padding: 12px 0 18px;
+    }
+}

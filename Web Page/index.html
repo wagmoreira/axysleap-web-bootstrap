@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxisLeap Invest</title>
+
+    <!-- Bootstrap CSS (CDN) -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+        crossorigin="anonymous"
+    >
+
+    <!-- CSS customizado da AxisLeap -->
+    <link rel="stylesheet" href="assets/AxysLeap/css/styles.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="topo">
+        <div class="logo">AxisLeap Invest</div>
+
+        <nav class="menu">
+            <a class="ativo" href="index.html">Início</a>
+            <a href="pages/trilha.html">Trilha</a>
+            <a href="pages/simulador.html">Simulador</a>
+            <a href="pages/perfil.html">Perfil</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Bootstrap container para o conteúdo principal -->
+        <div class="container">
+
+            <!-- HERO -->
+            <section id="inicio" class="hero">
+                <div class="hero-texto">
+                    <h1>Learn. Leap. Invest.</h1>
+                    <p>Transforme sua jornada como investidor.</p>
+                    <button>Entrar</button>
+                </div>
+
+                <div class="hero-imagem">
+                    <!-- Aqui depois entra uma imagem da AxisLeap -->
+                    <img src="assets/AxysLeap/imagens/Logo AxysLeap.png" alt="Logo AxisLeap">
+                </div>
+            </section>
+
+            <!-- CARDS DA TRILHA -->
+            <section id="trilha" class="trilha">
+                <h2>Trilha de Aprendizado</h2>
+                <p class="trilha-descricao">
+                    Acompanhe seu avanço nos módulos principais da AxisLeap.
+                </p>
+
+                <div class="cards">
+                    <article class="card">
+                        <h3>Badge AxisLeap</h3>
+                        <p>Progresso geral do seu aprendizado na plataforma.</p>
+
+                        <div class="card-progress">
+                            <div class="card-progress-bar" style="width: 35%;"></div>
+                        </div>
+                        <span class="card-status">Nível 1 • 35% concluído</span>
+                    </article>
+
+                    <article class="card">
+                        <h3>Fundos Imobiliários</h3>
+                        <p>Módulos práticos para entender e investir em FIIs.</p>
+
+                        <div class="card-progress">
+                            <div class="card-progress-bar" style="width: 60%;"></div>
+                        </div>
+                        <span class="card-status">Em andamento • 60%</span>
+                    </article>
+
+                    <article class="card">
+                        <h3>Tesouro Direto</h3>
+                        <p>Aprenda a investir em renda fixa com segurança.</p>
+
+                        <div class="card-progress">
+                            <div class="card-progress-bar" style="width: 20%;"></div>
+                        </div>
+                        <span class="card-status">Início • 20%</span>
+                    </article>
+                </div>
+            </section>
+
+            <!-- SIMULADOR -->
+            <section id="simulador" class="simulador">
+                <h2>Simulador de Investimentos</h2>
+
+                <div class="simulador-card">
+                    <!-- Valor a investir -->
+                    <div class="simulador-linha">
+                        <label for="valorInvestir">Valor a investir</label>
+                        <input
+                            type="text"
+                            id="valorInvestir"
+                            value="R$ 10.000">
+                    </div>
+
+                    <!-- Nível de risco -->
+                    <div class="simulador-linha">
+                        <div class="simulador-linha-topo">
+                            <span>Nível de risco</span>
+                            <span class="simulador-risco-label">Moderado</span>
+                        </div>
+
+                        <input
+                            type="range"
+                            id="nivelRisco"
+                            min="0"
+                            max="100"
+                            value="50"
+                            step="1">
+
+                        <div class="simulador-risco-marcas">
+                            <span>Baixo</span>
+                            <span>Médio</span>
+                            <span>Alto</span>
+                        </div>
+                    </div>
+
+                    <!-- Resultado -->
+                    <div class="simulador-resultado">
+                        <p>Retorno estimado:</p>
+                        <strong>R$ 850</strong>
+                    </div>
+
+                    <!-- Botão -->
+                    <button type="button" class="simulador-botao">
+                        Nova simulação
+                    </button>
+                </div>
+            </section>
+            
+            <!-- PERFIL -->
+            <section id="perfil" class="perfil">
+                <h2>Seu Perfil</h2>
+
+                <div class="perfil-card">
+
+                    <!-- Cabeçalho -->
+                    <div class="perfil-header">
+
+                        <!-- Avatar + informações -->
+                        <div class="perfil-identidade">
+                            <div class="perfil-avatar">WS</div>
+
+                            <div class="perfil-textos">
+                                <h3 class="perfil-nome">Wagner Moreira Silva</h3>
+                                <p class="perfil-nivel-titulo">Investidor Iniciante</p>
+                                <p class="perfil-descricao">
+                                    Você está começando sua jornada de investimentos na AxisLeap.
+                                </p>
+                            </div>
+                        </div>
+
+                        <span class="perfil-tag">Nível 1</span>
+                    </div>
+
+                    <!-- Métricas -->
+                    <div class="perfil-metricas">
+                        <div class="perfil-metrica">
+                            <span class="perfil-metrica-label">Simulações feitas</span>
+                            <span class="perfil-metrica-valor">12</span>
+                        </div>
+
+                        <div class="perfil-metrica">
+                            <span class="perfil-metrica-label">Média de retorno</span>
+                            <span class="perfil-metrica-valor">+8,5% a.a.</span>
+                        </div>
+
+                        <div class="perfil-metrica">
+                            <span class="perfil-metrica-label">Dias na plataforma</span>
+                            <span class="perfil-metrica-valor">27</span>
+                        </div>
+                    </div>
+
+                    <!-- Progresso -->
+                    <div class="perfil-progresso-bloco">
+                        <div class="perfil-progresso-header">
+                            <span class="perfil-progresso-label">Progresso na trilha de aprendizado</span>
+                            <span class="perfil-progresso-percentual">35%</span>
+                        </div>
+
+                        <div class="perfil-progress">
+                            <div class="perfil-progress-bar" style="width: 35%;"></div>
+                        </div>
+
+                        <p class="perfil-nota">
+                            Continue estudando para avançar para o próximo nível e destravar novos módulos.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+        </div> <!-- fim .container -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>AxisLeap Invest © 2025</p>
+    </footer>
+
+</body>
+</html>
